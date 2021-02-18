@@ -1,0 +1,29 @@
+.contain-footer{
+    width: 100%;
+    background: #f8f8f8;
+    box-shadow: inset 0 0 5px 5px rgba(255, 255, 255, 0.4);
+}
+
+.footer-option{
+    display: flex;
+    justify-content: flex-end;
+    padding-top:5px;
+}
+.footer-option>a{
+    margin-right:10px;
+}
+
+.footer-author{
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    color: #ccc;
+    text-align: center;
+    margin: 10px 0;
+    font-weight: 700;
+    color: hsla(0,0%,80%,.7);
+    text-shadow: 1px 3px 6px #fff, 0 0 0 #000, 1px 3px 6px #fff;
+    font-family: Helvetica,Arial,sans-serif;
+}

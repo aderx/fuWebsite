@@ -1,0 +1,73 @@
+.contain-header{
+    height: 90px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid #CCC;
+    padding:0 10px;
+}
+
+.header-logo{
+    position: relative;
+}
+
+.header-logo > .logo-title{
+    font-size: 2.3em;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.header-logo > .logo-flag{
+    letter-spacing: 1px;
+    font-size: 0.8em;
+    font-weight: 800;
+    padding: 0 5px;
+    border: 1px solid;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: rotate(-10deg) translateX(100%);
+    color: #1890ff;
+}
+
+.header-nav{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+}
+
+.header-nav-item{
+    letter-spacing: 2px;
+    font-size:1.2em;
+    margin-right: 20px;
+    cursor: pointer;
+    color: #333333;
+}
+
+.header-nav-item:last-child{
+    margin-right: 0;
+}
+
+.header-nav-item:hover {
+    font-weight: 600;
+    color: #333333;
+}
+
+.nav-active, .nav-active:hover{
+    font-weight: 600;
+    color: #1890ff;
+}
+
+.header-nav-item>.ant-avatar {
+    margin-top: -10px;
+    border: 3px solid;
+    box-sizing: content-box;
+}
+.header-nav-item>.ant-avatar:hover{
+    border-color: #333333;
+}
+
+.nav-active>.ant-avatar, .nav-active>.ant-avatar:hover{
+    border-color: #1890ff;
+}
