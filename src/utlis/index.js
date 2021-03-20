@@ -1,5 +1,5 @@
-import { LANGUAGE_CN } from "../consts/languages/cn";
-import { LANGUAGE_EN } from "../consts/languages/en";
+import { LANGUAGE_CN } from "../consts/i18n/cn";
+import { LANGUAGE_EN } from "../consts/i18n/en";
 
 /**
  * 获取本地语言数据
