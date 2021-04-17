@@ -23,6 +23,6 @@ module.exports = {
         "space-in-parens": 2, //强制在圆括号内使用一致的空格
         "no-var":2, //要求使用 let 或 const 而不是 var,
         "no-unused-vars": 1, //禁止出现未使用过的变量
-        "react/prop-types": 0 //防止在react组件定义中缺少props验证
+        "react/prop-types": 1, //防止在react组件定义中缺少props验证
     }
 };

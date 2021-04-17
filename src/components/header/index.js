@@ -1,9 +1,9 @@
 import React from 'react';
 import './style.css'
 import { NavLink, withRouter } from "react-router-dom";
-import { WEB_ROUTES } from "../../consts/routes";
+import { WEB_ROUTES } from "Const/routes";
 import { Avatar } from "antd";
-import { Configure } from "../context";
+import { Configure } from "BasicComponents/context";
 
 class Header extends React.Component {
     render() {

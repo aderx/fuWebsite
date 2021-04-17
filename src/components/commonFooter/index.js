@@ -1,8 +1,8 @@
 import React from "react";
 import './style.css'
 import { Row, Col } from "antd";
-import { Configure } from "../context";
-import { getOpsLocale } from "../../utlis";
+import { Configure } from "BasicComponents/context";
+import { getOpsLocale } from "Utils";
 
 export default function CommonFooter (props) {
     return <Configure.Consumer>

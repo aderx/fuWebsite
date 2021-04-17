@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import './App.css';
 import { Row, Col } from "antd";
-import Header from "./components/header";
-import { getLocale } from "./utlis";
+import Header from "Components/header";
+import { getLocale } from "Utils";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { WEB_ROUTES } from "./consts/routes";
-import CommonFooter from "./components/commonFooter";
-import { Configure } from "./components/context";
+import { WEB_ROUTES } from "Const/routes";
+import CommonFooter from "Components/commonFooter";
+import { Configure } from "BasicComponents/context";
+
 
 function App() {
     // 是否忽略缓存中的值。之后接入接口，动态控制
