@@ -6,8 +6,7 @@ import { getLocale } from "Utils";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { WEB_ROUTES } from "Const/routes";
 import CommonFooter from "Components/commonFooter";
-import { Configure } from "BasicComponents/context";
-
+import { BaseProvider } from "BasicComponents/context/index.tsx";
 
 function App() {
     // 是否忽略缓存中的值。之后接入接口，动态控制
@@ -29,7 +28,7 @@ function App() {
 
     return (
         <Router>
-            <Configure.Provider value={configure}>
+            <BaseProvider value={configure}>
                 <Row className="container">
                     <Col { ...colSpan }>
                         <Header />
@@ -49,7 +48,7 @@ function App() {
                         <CommonFooter { ...colSpan } />
                     </Col>
                 </Row>
-            </Configure.Provider>
+            </BaseProvider>
         </Router>
     );
 }

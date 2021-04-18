@@ -3,7 +3,7 @@ import './style.css'
 import { NavLink, withRouter } from "react-router-dom";
 import { WEB_ROUTES } from "Const/routes";
 import { Avatar } from "antd";
-import { Configure } from "BasicComponents/context";
+import { Configure, bindContext } from "BasicComponents/context/index.tsx";
 
 class Header extends React.Component {
     render() {
@@ -46,6 +46,5 @@ class Header extends React.Component {
     }
 }
 
-Header.contextType = Configure;
 // 使用withRouter高阶组件封装一下，以便获取到路由地址和路由参数
-export default withRouter(Header)
+export default withRouter(bindContext(Header));
