@@ -4,7 +4,7 @@ import { Row, Col } from "antd";
 import Header from "Components/header";
 import { getLocale } from "Utils";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { WEB_ROUTES } from "Const/routes";
+import { WEB_ROUTES } from "./routes";
 import CommonFooter from "Components/commonFooter";
 import { BaseProvider } from "BasicComponents/context/index.tsx";
 

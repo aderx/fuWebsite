@@ -1,5 +1,5 @@
-import { StarList } from "../pages/starList";
-import { FastAnswer } from "../pages/fastAnswer";
+import { StarList } from "./pages/starList";
+import { FastAnswer } from "./pages/fastAnswer";
 
 export const WEB_ROUTES = [
     {

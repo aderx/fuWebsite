@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css'
 import { NavLink, withRouter } from "react-router-dom";
-import { WEB_ROUTES } from "Const/routes";
+import { WEB_ROUTES } from "../../routes";
 import { Avatar } from "antd";
 import { bindContext } from "BasicComponents/context/index.tsx";
 
@@ -24,7 +24,7 @@ class Header extends React.Component {
             <div className='header-nav'>
                 {
                     WEB_ROUTES.map((item) => {
-                        const {content, name} = item;
+                        const { content, name } = item;
                         return (<NavLink
                             exact
                             key={name}
