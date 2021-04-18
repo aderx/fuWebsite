@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css'
 import { NavLink, withRouter } from "react-router-dom";
-import { WEB_ROUTES } from "../../routes";
+import { WEB_ROUTES } from "../../routes.ts";
 import { Avatar } from "antd";
 import { bindContext } from "BasicComponents/context/index.tsx";
 
