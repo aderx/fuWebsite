@@ -1,11 +1,24 @@
 import { StarList } from "./pages/starList";
 import { FastAnswer } from "./pages/fastAnswer";
+import React from "react";
 
-export const WEB_ROUTES = [
+interface RouteType {
+    // 页面标题
+    name: string;
+    // 页面标记。off：非正式内容，lock：加密内容，fail：无法加载或加载失败，hide：不显示内容
+    flagType?: 'off' | 'lock' | 'fail' | 'hide';
+    // 页面组件
+    component?: React.ComponentType,
+    // 展示的图片，不填将展示导航名称
+    img?: string;
+    child?: RouteType[];
+    type?: 'switch' | 'page' | 'link'
+}
+
+const WEB_ROUTES: RouteType[] = [
     {
         name: 'website',
         flagType: 'off',
-        type: 'normal',
         component: StarList,
     },
     {
@@ -19,13 +32,24 @@ export const WEB_ROUTES = [
     },
     {
         name: 'composition',
-        flagType: 'off',
-        open: 'banned',
+        flagType: 'lock',
     },
     {
         name: 'me',
-        flagType: 'hide',
-        content: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-        open: 'key',
+        flagType: 'lock',
+        img: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        child: [
+            {
+                name: 'detail',
+                flagType: 'lock',
+                component: StarList,
+            },
+            {
+                name: 'login',
+                flagType: 'hide',
+            }
+        ]
     },
 ]
+
+export default WEB_ROUTES;

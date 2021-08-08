@@ -24,5 +24,7 @@ module.exports = {
         "no-var":2, //要求使用 let 或 const 而不是 var,
         "no-unused-vars": 1, //禁止出现未使用过的变量
         "react/prop-types": 1, //防止在react组件定义中缺少props验证
+        "no-mixed-spaces-and-tabs": 2, // 不允许tab和空格混用
+        "object-curly-spacing": ['error', 'always'],
     }
 };

@@ -1,0 +1,60 @@
+{
+  "compilerOptions": {
+    
+    "target": "es5",
+    "sourceMap": true,
+
+    // 不允许有永远无法执行到的代码块
+    "allowUnreachableCode": false,
+    // 不允许在switch语句中，有无法匹配的情况
+    "noFallthroughCasesInSwitch": true,
+    // 不允许有隐式的any类型（存疑）
+    "noImplicitAny": false,
+    // 不允许有隐式的类型覆盖
+    "noImplicitOverride": true,
+    // 不允许有隐式的返回类型
+    "noImplicitReturns": true,
+    // 不允许有隐式的this
+    "noImplicitThis": true,
+    // 不允许有未使用的本地变量
+    "noUnusedLocals": false,
+    // 不允许有未使用的函数参数(存疑)
+    "noUnusedParameters": true,
+    // bind、call、apply方法传参严格判断
+    "strictBindCallApply": true,
+    // 严格的函数类型检查
+    "strictFunctionTypes": true,
+    // 严格的空值检查，避免意料之外的空值
+    "strictNullChecks": true,
+
+    "baseUrl": "./src/",
+    // ESNEXT
+    "module": "commonjs",
+    "paths": {
+      "components/*": ["components/*"],
+      "basicComponents/*": ["basicComponents/*"],
+      "utils/*": ["utils/*"],
+      "consts/*": ["consts/*"],
+      "pages/*": ["pages/*"],
+      "types/*": ["types/*"],
+      "@/*": ["*"]
+    },
+
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "noEmit": true,
+    
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": ["./src"]
+}
