@@ -11,8 +11,9 @@ interface RouteType {
     component?: React.ComponentType,
     // 展示的图片，不填将展示导航名称
     img?: string;
-    child?: RouteType[];
-    type?: 'switch' | 'page' | 'link'
+    child?: ({
+        type?: 'spanSelector' | 'select' | 'toggle';
+    } & RouteType)[];
 }
 
 const WEB_ROUTES: RouteType[] = [
@@ -40,13 +41,19 @@ const WEB_ROUTES: RouteType[] = [
         img: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
         child: [
             {
+                name: 'info',
+                flagType: 'lock',
+                component: StarList,
+            },
+            {
                 name: 'detail',
                 flagType: 'lock',
                 component: StarList,
             },
             {
-                name: 'login',
+                name: 'span',
                 flagType: 'hide',
+                type: 'spanSelector',
             }
         ]
     },

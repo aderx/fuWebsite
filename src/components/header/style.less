@@ -1,0 +1,128 @@
+@import url("../../styles/index.less");
+.contain-header {
+  height: 90px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-bottom: 1px solid @mainBorderColor;
+  padding: 0 10px;
+
+  .header-logo {
+    position: relative;
+
+    .logo-title {
+      font-size: 2.3em;
+      font-weight: 600;
+      text-transform: capitalize;
+    }
+
+    .logo-flag {
+      letter-spacing: 1px;
+      font-size: 0.8em;
+      font-weight: 800;
+      padding: 0 5px;
+      border: 1px solid;
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: rotate(-10deg) translateX(100%);
+      color: @mainColor;
+    }
+  }
+
+  .header-nav {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+    position: relative;
+
+    .header-nav-item {
+      letter-spacing: 2px;
+      font-size: 1.2em;
+      margin-right: 20px;
+      cursor: pointer;
+      color: @normalColor;
+
+      .ant-avatar {
+        margin-top: -10px;
+        border: 3px solid;
+        box-sizing: content-box;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        font-weight: 600;
+        color: @normalColor;
+
+        .ant-avatar {
+          border-color: @normalColor;
+        }
+      }
+    }
+
+    .nav-active {
+      &,&:hover {
+        font-weight: 600;
+        color: @mainColor;
+      }
+
+      .ant-avatar {
+        &,&:hover {
+          color: @mainColor;
+        }
+      }
+    }
+
+    .header-nav-child {
+      &:hover {
+        font-weight: 400;
+        color: @normalColor;
+
+        .nav-child-list {
+          display: block;
+        }
+      }
+
+      .nav-child-list {
+        display: none;
+        position: absolute;
+        right:0;
+        min-width: 150px;
+        background-color: @mainBackground;
+        border-radius: 5px;
+        box-shadow: 0 0 3px 0 @mainBorderColor;
+        padding: 10px;
+        z-index: 2;
+        margin-top: 10px;
+        
+        .header-nav-item {
+            height: 40px;
+            display: block;
+            font-size: 1em;
+        }
+
+        &::before {
+          height: 15px;
+          width: 100%;
+          content: '';
+          display: block;
+          position: absolute;
+          top: -15px;
+          left: 0;
+        }
+
+        .nav-span-selector {
+          p {
+            font-size: 0.8em;
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+  }
+}

@@ -29,7 +29,7 @@ export default function App() {
       <BaseProvider value={localeLanguage}>
         <Row className="container">
           <Col { ...colSpan }>
-            <Header />
+            <Header currentSpan={contentSpan} changeSpan={(span) => setContentSpan(span)} />
           </Col>
         </Row>
         <Row>
@@ -40,7 +40,7 @@ export default function App() {
                 <Route key={route.name} exact path={`/${route.name}`} {...route} />)
             }
             <Route path='/404' exact component={NotFound} />
-            <Route component={() => <Redirect to='/404' />}/>
+            {/* <Route component={() => <Redirect to='/404' />}/> */}
           </Col>
         </Row>
         <Row>

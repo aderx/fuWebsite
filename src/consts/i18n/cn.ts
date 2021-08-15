@@ -8,7 +8,10 @@ export const LANGUAGE_CN = {
         fast: '速查',
         blog: '博文',
         composition: '作品',
-        me: '我'
+        me: '我',
+        info: '简历',
+        detail: '更多',
+        span: '页面宽度',
     },
     option: {
         contact: '联系我',

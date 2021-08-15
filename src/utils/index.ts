@@ -104,3 +104,19 @@ export function isTargetType (value: any, targetType: string): boolean {
  */
 // eslint-disable-next-line
 export const NOOP = () => {};
+
+/**
+ * 防抖函数
+ * @param func 需要运行的函数
+ * @param duration 延时时间，默认1s
+ * @returns 防抖函数
+ */
+export const debounce = (func: (...args:any[]) => void, duration = 1000) => {
+    let timer: NodeJS.Timeout | undefined = undefined;
+    return (...args: any[]) => {
+        if(timer) {
+            clearTimeout(timer);
+        }
+        timer = setTimeout(func, duration, ...args);
+    }
+}
