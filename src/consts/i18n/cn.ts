@@ -11,6 +11,7 @@ export const LANGUAGE_CN = {
         me: '我',
         info: '简历',
         detail: '更多',
+        lan: '语言',
         span: '页面宽度',
     },
     option: {

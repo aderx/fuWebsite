@@ -11,8 +11,9 @@ interface RouteType {
     component?: React.ComponentType,
     // 展示的图片，不填将展示导航名称
     img?: string;
+    // 子导航列表
     child?: ({
-        type?: 'spanSelector' | 'select' | 'toggle';
+        type?: 'spanSelector' | 'languageSelector';
     } & RouteType)[];
 }
 
@@ -49,6 +50,11 @@ const WEB_ROUTES: RouteType[] = [
                 name: 'detail',
                 flagType: 'lock',
                 component: StarList,
+            },
+            {
+                name: 'lan',
+                flagType: 'lock',
+                type: 'languageSelector',
             },
             {
                 name: 'span',
