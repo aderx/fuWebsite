@@ -1,4 +1,4 @@
-import { mergeObject } from "utils";
+import { deepMerge } from "./object";
 import LANGUAGE from "consts/i18n";
 
 /**
@@ -8,5 +8,5 @@ import LANGUAGE from "consts/i18n";
 export function getLocale(code: Uppercase<string>) {
     const languageFLag = String(code).toUpperCase();
     // 进行数据合并，避免多余字段导致系统崩溃
-    return mergeObject(LANGUAGE['DEFAULT'], LANGUAGE[languageFLag] || LANGUAGE['DEFAULT']);
+    return deepMerge(LANGUAGE['DEFAULT'], LANGUAGE[languageFLag] || LANGUAGE['DEFAULT']);
 }
