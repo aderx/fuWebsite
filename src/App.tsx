@@ -25,11 +25,8 @@ export default function App() {
     offset: (24 - contentSpan) / 2,
   };
   const changeLocale = (type: "cn" | "en") => {
-    console.log("here", type);
     setLocaleLanguage(getLocale(type));
-    console.log("---", localeLanguage);
   };
-  console.log("app", localeLanguage);
 
   return (
     <Router>
@@ -55,7 +52,6 @@ export default function App() {
               />
             ))}
             <Route path="/404" exact component={NotFound} />
-            {/* <Route component={() => <Redirect to='/404' />}/> */}
           </Col>
         </Row>
         <Row>

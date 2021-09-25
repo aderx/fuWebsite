@@ -17,7 +17,6 @@ interface HeaderProps {
 }
 
 function Header(props: HeaderProps, $l: I18NType) {
-  console.log("locale", $l);
   const { location, currentSpan, changeSpan, changeLocale } = props;
   const { flagType, nav, locale } = $l;
   const [pageSpan, setPageSpan] = useState(currentSpan);
@@ -99,7 +98,6 @@ function Header(props: HeaderProps, $l: I18NType) {
                           >
                             {locale.label}
                             <Switch
-                              title="中文"
                               checked={locale.type === "cn"}
                               onChange={(isChecked) =>
                                 changeLocale(isChecked ? "cn" : "en")
