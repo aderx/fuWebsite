@@ -1,0 +1,17 @@
+const ADMIN_PUBLIC_CONFIGS = {};
+
+const SYS_PROTECT_CONFIGS = {
+  IGNORE_LOCALE_LANGUAGE: false,
+};
+
+const SYS_PUBLIC_CONFIGS = {};
+
+const USER_PUBLIC_CONFIGS = {};
+
+export default Object.assign(
+  {},
+  USER_PUBLIC_CONFIGS,
+  SYS_PUBLIC_CONFIGS,
+  SYS_PROTECT_CONFIGS,
+  ADMIN_PUBLIC_CONFIGS
+);

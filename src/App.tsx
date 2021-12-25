@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import { Row, Col } from "antd";
 import Header from "components/header";
@@ -18,7 +18,16 @@ export default function App() {
       getControlStorage("default_locale_type", ignoreLocalStorage) || ""
     )
   );
+
   const [contentSpan, setContentSpan] = useState(14); // 内容区域宽度
+
+  useEffect(() => {
+    setLocaleLanguage(
+      getLocale(
+        getControlStorage("default_locale_type", ignoreLocalStorage) || ""
+      )
+    );
+  }, []);
 
   const colSpan = {
     span: contentSpan,
