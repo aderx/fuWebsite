@@ -1,16 +1,14 @@
-import React from "react";
 import "./style.css";
 import { Row, Col } from "antd";
-import { bindContext } from "basicComponents/context";
-import { I18NType } from "@/types";
+import { getContext } from "@/context";
 
-interface CommonFooterFuncProps {
+interface CommonFooterProps {
   span: number;
   offset: number;
 }
 
-function CommonFooterFunc(props: CommonFooterFuncProps, $l: I18NType) {
-  const { option, locale } = $l;
+export function CommonFooter(props: CommonFooterProps) {
+  const { option, locale } = getContext();
   return (
     <div className="contain-footer">
       <Row>
@@ -31,5 +29,3 @@ function CommonFooterFunc(props: CommonFooterFuncProps, $l: I18NType) {
     </div>
   );
 }
-
-export default bindContext(CommonFooterFunc);

@@ -3,9 +3,9 @@
  * @param value 需要判断的数据
  */
 export function getType(value: any): string {
-    const stringTypeName = Object.prototype.toString.call(value);
-    const typeName = stringTypeName.match(/\[object (.+)]/)?.[1] || '';
-    return typeName.toLowerCase();
+  const stringTypeName = Object.prototype.toString.call(value);
+  const typeName = stringTypeName.match(/\[object (.+)]/)?.[1] || "";
+  return typeName.toLowerCase();
 }
 
 /**
@@ -13,8 +13,8 @@ export function getType(value: any): string {
  * @param value 数据值
  * @param targetType 目标类型
  */
-export function isTargetType (value: any, targetType: string): boolean {
-    return getType(value) === String(targetType).toLowerCase();
+export function isTargetType(value: any, targetType: string): boolean {
+  return getType(value) === String(targetType).toLowerCase();
 }
 
 /**
@@ -30,12 +30,12 @@ export const NOOP = () => {};
  * @param duration 延时时间，默认1s
  * @returns 防抖函数
  */
-export const debounce = (func: (...args:any[]) => void, duration = 1000) => {
-    let timer: NodeJS.Timeout | undefined = undefined;
-    return (...args: any[]) => {
-        if(timer) {
-            clearTimeout(timer);
-        }
-        timer = setTimeout(func, duration, ...args);
+export const debounce = (func: (...args: any[]) => void, duration = 1000) => {
+  let timer: NodeJS.Timeout | undefined = undefined;
+  return (...args: any[]) => {
+    if (timer) {
+      clearTimeout(timer);
     }
-}
+    timer = setTimeout(func, duration, ...args);
+  };
+};

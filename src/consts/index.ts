@@ -1,1 +1,1 @@
-export {};
+export * from "./i18n";

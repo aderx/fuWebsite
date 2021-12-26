@@ -1,12 +1,20 @@
-import { deepMerge, deepCopy } from "./object";
-import LANGUAGE from "consts/i18n";
+import { deepMerge } from "./object";
+import { LANGUAGE_CN, LANGUAGE_EN } from "@/consts";
+import { getControlStorage } from "./storage";
+
+const MapLanguage = {
+  DEFAULT: LANGUAGE_CN,
+  CN: LANGUAGE_CN,
+  EN: LANGUAGE_EN,
+};
 
 /**
- * 获取本地语言数据
+ * 获取指定的语言数据
  * @param code 需要获取的语言code，默认CN
  */
-export function getLocale(code: Uppercase<string>) {
-    const languageFLag = String(code).toUpperCase();
-    // 进行数据合并，避免多余字段导致系统崩溃
-    return deepMerge(deepCopy(LANGUAGE['DEFAULT']), LANGUAGE[languageFLag] || LANGUAGE['DEFAULT']);
+export function getLocale(useLocale = true, code?: Uppercase<string>) {
+  const flag = getControlStorage("default_locale_type", useLocale) || code;
+  const languageFLag = String(flag).toUpperCase();
+
+  return deepMerge(MapLanguage.DEFAULT, MapLanguage[languageFLag]);
 }

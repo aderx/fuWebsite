@@ -4,29 +4,21 @@ import { Row, Col } from "antd";
 import Header from "components/header";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import WEB_ROUTES from "routes";
-import CommonFooter from "components/commonFooter";
-import { BaseProvider } from "basicComponents/context";
-import { getLocale, getControlStorage } from "utils";
+import { CommonFooter } from "@/components";
+import { getLocale } from "utils";
 import { NotFound } from "pages/notFound";
+import { Context } from "@/context";
 
 export default function App() {
   // 【预留字段】是否忽略缓存中的值。
   const ignoreLocalStorage = false;
   // 配置context信息
-  const [localeLanguage, setLocaleLanguage] = useState(() =>
-    getLocale(
-      getControlStorage("default_locale_type", ignoreLocalStorage) || ""
-    )
-  );
+  const [localeLanguage, setLocaleLanguage] = useState(() => getLocale());
 
   const [contentSpan, setContentSpan] = useState(14); // 内容区域宽度
 
   useEffect(() => {
-    setLocaleLanguage(
-      getLocale(
-        getControlStorage("default_locale_type", ignoreLocalStorage) || ""
-      )
-    );
+    setLocaleLanguage(getLocale());
   }, []);
 
   const colSpan = {
@@ -34,12 +26,12 @@ export default function App() {
     offset: (24 - contentSpan) / 2,
   };
   const changeLocale = (type: "cn" | "en") => {
-    setLocaleLanguage(getLocale(type));
+    setLocaleLanguage(getLocale(false, type));
   };
 
   return (
     <Router>
-      <BaseProvider value={localeLanguage}>
+      <Context value={localeLanguage}>
         <Row className="container">
           <Col {...colSpan}>
             <Header
@@ -68,7 +60,7 @@ export default function App() {
             <CommonFooter {...colSpan} />
           </Col>
         </Row>
-      </BaseProvider>
+      </Context>
     </Router>
   );
 }

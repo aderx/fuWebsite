@@ -1,9 +1,7 @@
 {
   "compilerOptions": {
-    
     "target": "es5",
     "sourceMap": true,
-
     // 不允许有永远无法执行到的代码块
     "allowUnreachableCode": false,
     // 不允许在switch语句中，有无法匹配的情况
@@ -31,12 +29,6 @@
     // ESNEXT
     "module": "commonjs",
     "paths": {
-      "components/*": ["components/*"],
-      "basicComponents/*": ["basicComponents/*"],
-      "utils/*": ["utils/*"],
-      "consts/*": ["consts/*"],
-      "pages/*": ["pages/*"],
-      "types/*": ["types/*"],
       "@/*": ["*"]
     },
 
@@ -48,13 +40,10 @@
     "jsx": "react-jsx",
     "moduleResolution": "node",
     "noEmit": true,
-    
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true
   },
-  "exclude": [
-    "node_modules"
-  ],
+  "exclude": ["node_modules"],
   "include": ["./src"]
 }
